@@ -1,10 +1,12 @@
 #!/system/bin/sh
 
 RED_LED="/sys/class/leds/red/brightness"
+GREEN_LED="/sys/class/leds/green/brightness"
 BLUE_LED="/sys/class/leds/blue/brightness"
 
 set_rgb() {
     echo "$1" > "$RED_LED" 2>/dev/null
+    echo "$2" > "$GREEN_LED" 2>/dev/null
     echo "$3" > "$BLUE_LED" 2>/dev/null
 }
 
